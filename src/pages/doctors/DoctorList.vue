@@ -8,17 +8,16 @@
         <ol class="breadcrumb page-breadcrumb pull-right">
           <li>
             <font-awesome-icon :icon="['fas', 'home']" />
-            <i class="fa fa-home"></i>&nbsp;<a
+            <i class="fa fa-home"></i>&nbsp;<router-link
               class="parent-item"
-              href="index-2.html"
-              >Home</a
+              to="/"
+              >Home</router-link
             >&nbsp;
             <font-awesome-icon :icon="['fas', 'angle-right']" />
           </li>
           <li>
-            <a class="parent-item" href="#">Doctors</a>&nbsp;<font-awesome-icon
-              :icon="['fas', 'angle-right']"
-            />
+            <router-link class="parent-item" to="/doctors">Doctors</router-link
+            >&nbsp;<font-awesome-icon :icon="['fas', 'angle-right']" />
           </li>
           <li class="active">Doctor List</li>
         </ol>
@@ -68,20 +67,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr class="odd gradeX">
-                            <doctor-item
-                              v-for="doctor in doctors"
-                              :key="doctor.id"
-                              :name="doctor.name"
-                              :department="doctor.department"
-                              :specialization="doctor.specialization"
-                              :degree="doctor.degree"
-                              :mobile="doctor.mobile"
-                              :email="doctor.email"
-                              :joining_date="doctor.joining_date"
-                              :is_active="doctor.is_active"
-                            ></doctor-item>
-                          </tr>
+                          <doctor-item
+                            v-for="doctor in doctors"
+                            :key="doctor.id"
+                            :id="doctor.id"
+                            :name="doctor.name"
+                            :department="doctor.department"
+                            :specialization="doctor.specialization"
+                            :degree="doctor.degree"
+                            :mobile="doctor.mobile"
+                            :email="doctor.email"
+                            :joining_date="doctor.joining_date"
+                            :is_active="doctor.is_active"
+                          ></doctor-item>
                         </tbody>
                       </table>
                     </div>
