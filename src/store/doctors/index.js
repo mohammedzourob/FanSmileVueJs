@@ -3,7 +3,7 @@ import getters from "./getters.js";
 import mutations from "./mutations.js";
 
 export default {
-//   namespaced: true,
+  //   namespaced: true,
   state() {
     return {
       doctors: [
@@ -16,7 +16,7 @@ export default {
           mobile: 4444565756,
           email: "rag@gmail.com",
           joining_date: "22 Feb 2000",
-          is_active:true
+          is_active: "1",
         },
       ],
     };

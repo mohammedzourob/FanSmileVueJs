@@ -1,5 +1,6 @@
 export default {
-//   doctorList(state) {
-//     return state.doctors;
-//   },
+
+    doctorData(state,payload){
+        state.doctors.push(payload)
+    }
 };
