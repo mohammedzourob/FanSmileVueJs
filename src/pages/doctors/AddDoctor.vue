@@ -31,7 +31,7 @@
             <header>Add doctor</header>
           </div>
           <div class="card-body">
-            <form-doctor></form-doctor>
+            <form-doctor @submit="saveData"></form-doctor>
           </div>
         </div>
       </div>
@@ -39,9 +39,15 @@
   </div>
 </template>
 <script>
-import FormDoctor from "../../components/doctors/form.vue";
+import FormDoctor from "../../components/doctors/formDoctor.vue";
 
 export default {
   components: { FormDoctor },
+  methods: {
+    saveData(data) {
+      this.$store.dispatch("addDoctor", data);
+      this.$router.replace("/doctors");
+    },
+  },
 };
 </script>
